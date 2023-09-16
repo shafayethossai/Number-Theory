@@ -1,4 +1,4 @@
-// O(tc * n)
+// O(log n)
 
 /*
 Fermet's Little Theorem :
