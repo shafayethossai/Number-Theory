@@ -1,3 +1,4 @@
+// O(n)
 /*
 law of Binomial Coefficient :
 ------------------------------
