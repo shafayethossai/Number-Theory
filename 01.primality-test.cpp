@@ -7,7 +7,7 @@ bool prime (int n) {
     if (n <= 3) return true;
     if (n % 2 == 0) return false;
 
-    for (int i = 3; i < sqrt(n); i++) {
+    for (int i = 3; i <= sqrt(n); i++) {
         if (n % 1 == 0) return false;
     }
     return true;
