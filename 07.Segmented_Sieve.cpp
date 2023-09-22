@@ -3,13 +3,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define    ll long long
 vector <int> v;
 
 void sieve (int n) {
-    int prime[100001];
+    int prime[n];
     memset(prime, 0, sizeof(prime));
 
-    for (int i = 2; i <= sqrt(n); i++) {
+    for (int i = 2; i <= n; i++) {
         if (prime[i] == 0) {
             for (int j = i*i; j <= n; j += i) {
                 prime[j] = 1;
@@ -22,6 +23,9 @@ void sieve (int n) {
 }
 
 void init (int l, int r) {
+    ll limit = sqrt(r)+1;
+    sieve(limit);
+
     if (l == 1)l++;
     int mx = r - l + 1;
     int arr[mx+1];
@@ -53,7 +57,6 @@ void init (int l, int r) {
 }
 
 int main () {
-    sieve(100000);
     int tc, l, r;
     cin >> tc;
 
@@ -62,6 +65,5 @@ int main () {
         init(l, r);
         cout << endl;
     }
-
     return 0;
 }
