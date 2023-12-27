@@ -38,3 +38,26 @@ int main () {
 
     return 0;
 }
+
+// Optimal Solution given below,
+int main () {
+    int tc;
+    cin >> tc;
+
+    ll arr[1000005] = {};
+
+    for (int i=1; i<1000005; i++) {
+        for (int j=i; j<1000005; j+=i) {
+            arr[j]++;
+        }
+    }
+
+    while (tc--) {
+        int x;
+        cin >> x;
+
+        cout << arr[x] << endl;
+    }
+
+    return 0;
+}
