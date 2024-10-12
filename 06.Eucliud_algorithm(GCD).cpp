@@ -5,6 +5,14 @@ using namespace std;
 
 #define    ll   long long
 
+// More Optimal way to find out GCD of a, b
+int GCD(int a, int b) {
+	if (a == 0) return b;
+	if (b == 0) return a;
+	if (a < b) swap(a, b);
+	return GCD(a-b, b);
+}
+
 ll gcd(ll a, ll b) {
     if(b == 0) {
         return a;
