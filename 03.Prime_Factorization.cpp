@@ -44,6 +44,41 @@ using namespace std;
 //***************************************************************************************************************************//
 //**********************************************************SHAFAYET DEFINED*********************************************************//
 
+///////////////////////////// For Q query find all distinct prime fact if (Q is 10^6 and n is 10^6)
+
+// const int N = 1e6+9;
+// int spf[N];
+
+// int main() {
+//     ios::sync_with_stdio(0); cin.tie(0);
+
+//     for (int i=2; i<N; i++) {
+//         spf[i] = i;
+//     }
+//     for (int i=2; i<N; i++) {
+//         if (spf[i] == i) {
+//             for (int j=i; j<N; j+=i) {
+//                 spf[j] = min(spf[j], i);
+//             }
+//         }
+//     }
+//     int n;
+//     while (cin >> n && n != 0) {
+//         int pt = n, cnt = 0;
+//         while (n > 1) {
+//             int x = spf[n];
+//             cnt++;
+
+//             while (n%x == 0) {
+//                 n /= x;
+//             }
+//         }
+//         cout << pt << " : " << cnt << '\n';
+//     }
+//     return 0;
+// }
+
+
 void primefact (int n) {
     bool first = true;
 
