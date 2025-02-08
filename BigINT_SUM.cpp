@@ -50,13 +50,13 @@ string BigSum(string x, string y){
     int len1 = x.size(), len2 = y.size();
 
     if(len1 > len2){
-        int gap = len2 - len1;
+        int gap = len1 - len2;
         while(gap--){
             y.push_back('0');
         }
     }
     else{
-        int gap = len1 - len2;
+        int gap = len2 - len1;
         while(gap--){
             x.push_back('0');
         }
@@ -82,12 +82,15 @@ string BigSum(string x, string y){
 }
 
 int main(){
-    string x, y;
-    cin>> x >> y;
+    fast;
+    int tc;
+    cin >> tc;
 
-    cout<<BigSum(x, y)<<endl;
+    for (int test = 1; test <= tc; test++) {
+        string x, y;
+        cin >> x >> y;
+        cout << "Case #" << test  << ": " << BigSum(x, y) <<endl;
+    }
 
     return 0;
 }
-
-
