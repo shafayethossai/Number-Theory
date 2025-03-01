@@ -4,17 +4,18 @@
 using namespace std;
 
 // ************************************Binary_Exponentiation_with_recursion**********
-long long power_recursion (long long n, long long m) {
-    if (m == 1) return n;
-    if (m == 0) return 1;
+ll power(ll a,ll b, ll mod) {
+    if(b == 0) return 1;
+    if(b == 1) return a % mod;
 
-    long long ans = power_recursion(n, m/2);
+    ll temp = power(a, b/2, mod);
 
-    if (m % 2 == 1) {
-        return ans*ans*n;
+    if(b % 2 == 0) {
+        return (temp * temp) % mod;
     }
-
-    return ans * ans;
+    else {
+        return (((temp * temp) % mod) * a) % mod;
+    }
 }
 
 // ************************************Binary_Exponentiation_Manually*****************
