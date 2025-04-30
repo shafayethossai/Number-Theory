@@ -27,24 +27,26 @@ using namespace std;
 //     }
 // }
 
+const int N  = 1e7 + 9;
+vector<ll> primes;
+bitset<N> vis;
+
 void sieve (int n) {
-    int prime[n+3];
-    memset(prime, 0, sizeof(prime));
+    vis[1] = 1;
 
     for (int i=2; i <= sqrt(n); i++) {
-        if (prime[i] == 0) {
+        if (vis[i] == 0) {
             for (int j = i*i; j <= n; j += i) {
-                prime[j] = 1;
+                vis[j] = 1;
             }
         }
     }
 
     for (int i = 2; i <=n; i++) {
-        if (prime[i] == 0) {
-            cout << i << " ";
+        if (vis[i] == 0) {
+            primes.push_back(i);
         }
     }
-    cout << endl;
 }
 
 int main () {
