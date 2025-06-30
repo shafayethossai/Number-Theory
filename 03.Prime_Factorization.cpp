@@ -52,16 +52,14 @@ using namespace std;
 // int main() {
 //     ios::sync_with_stdio(0); cin.tie(0);
 
-//     for (int i=2; i<N; i++) {
+//     for (int i=2; i<=N; i++) {
 //         spf[i] = i;
 //     }
-//     for (int i=2; i<N; i++) {
-//         if (spf[i] == i) {
-//             for (int j=i; j<N; j+=i) {
-//                 spf[j] = min(spf[j], i);
-//             }
-//         }
-//     }
+    // for (ll i=2; i<=n; i++) {
+    //     for (ll j=i; j<=n; j+=i) {
+    //         spf[j] = min(spf[j], i);
+    //     }
+    // }
 //     int n;
 //     while (cin >> n && n != 0) {
 //         int pt = n, cnt = 0;
@@ -76,6 +74,32 @@ using namespace std;
 //         cout << pt << " : " << cnt << '\n';
 //     }
 //     return 0;
+// }
+
+// void solve() {
+//     ll n;
+//     cin >> n;
+//     ll spf[n+1];
+
+//     for (ll i=2; i<=n; i++) {
+//         spf[i] = i;
+//     }
+//     for (ll i=2; i<=n; i++) {
+//         for (ll j=i; j<=n; j+=i) {
+//             spf[j] = min(spf[j], i);
+//         }
+//     }
+//     vector <ll> v;
+
+//     while (n > 1) {
+//         v.push_back(spf[n]);
+//         n /= spf[n];
+//     }
+//     cout << v.size() << endl;
+//     for (auto it : v) {
+//         cout << it << " ";
+//     }
+//     cout << endl;
 // }
 
 
