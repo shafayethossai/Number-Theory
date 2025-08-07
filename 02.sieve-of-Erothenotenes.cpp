@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Using Bitset
+// Using Bitset fast way
 
 // const int N = 1e8;
 // bitset<N> is_prime;
