@@ -11,7 +11,7 @@ void count_divisor (ll n) {
     for (int i = 1; i <= sqrt(n); i++) {
         if (n % i == 0) {
             ll x = i;
-            ll y = x / i;
+            ll y = n / i;
 
             st.insert(x);
             st.insert(y);
