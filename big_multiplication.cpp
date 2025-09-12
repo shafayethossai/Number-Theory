@@ -6,26 +6,6 @@ using namespace std;
 #define    ll long long
 #define    ull unsigned long long int
 
-bool isPrime(int n) {
-    if (n <= 1) return false;
-
-    for (int i = 2; i <= sqrt(n); i++) {
-        if (n % i == 0) {
-            return false;
-        }
-    }
-    return true;
-}
-
-int fact(int n) {
-    if(n==1) {
-        return 1;
-    }
-
-
-    return n*fact(n-1);
-}
-
 string multiply(string &num1, string &num2) {
     int len1 = num1.size();
     int len2 = num2.size();
