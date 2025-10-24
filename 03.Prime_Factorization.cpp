@@ -1,4 +1,4 @@
-// BIG INT SUM
+// O[sqrt(n)logn]
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -41,53 +41,39 @@ using namespace std;
 #define    Test_Case    int t;cin>>t;while(t--)
 #define    fastread()    (ios_base:: sync_with_stdio(false),cin.tie(NULL));
 
-//********************************* ******************************************************************************************//
+//***************************************************************************************************************************//
 //**********************************************************SHAFAYET DEFINED*********************************************************//
 
-string BigSum(string x, string y){
-    reverse(x.begin(), x.end());
-    reverse(y.begin(), y.end());
-    int len1 = x.size(), len2 = y.size();
+void primefact (int n) {
+    bool first = true;
 
-    if(len1 > len2){
-        int gap = len2 - len1;
-        while(gap--){
-            y.push_back('0');
+    for (int i = 2; i <= sqrt(n); i++) {
+        if (n % i == 0) {
+            int cnt = 0;
+
+            while (n % i == 0) {
+                cnt++;
+                n = n / i;
+            }cout << i << "^" << cnt << ",";
         }
     }
-    else{
-        int gap = len1 - len2;
-        while(gap--){
-            x.push_back('0');
-        }
-    }
-    int n = x.size();
-    string sum = "";
-    int carry = 0;
 
-    for(int i = 0; i < n; i++){
-        int p = x[i] - '0' + carry;
-        int q = y[i] - '0';
-        int r = p + q;
-        char lastDigit = (r % 10) + '0';
-        sum.push_back(lastDigit);
-        carry = r / 10;
+    if (n > 1) {
+        cout << n << "^" << 1 << endl;
     }
-    if(carry > 0){
-        sum.push_back(carry + '0');
+    else {
+        cout << endl;
     }
-    reverse(sum.begin(), sum.end());
-
-    return sum;
 }
 
-int main(){
-    string x, y;
-    cin>> x >> y;
+int main () {
+    int tc;
+    cin >> tc;
 
-    cout<<BigSum(x, y)<<endl;
-
+    while (tc--) {
+        int n;
+        cin >> n;
+        primefact(n);
+    }
     return 0;
 }
-
-
